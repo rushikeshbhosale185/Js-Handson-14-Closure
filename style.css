@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+    color: red;
+    margin: 0;
+    padding: 10px;
+}
+
+h1{
+    text-align: center;
+    color: hotpink;
+}
+h2{
+    border: 2px dotted white;
+    border-radius: 12px;
+    color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10vh 5vw 5vh;
+}
+
+h3{
+    /* text-align: center; */
+    border: 1px solid hotpink;
+    border-radius: 15px;
+    font-weight: lighter;
+    font-family: cursive;
+    color: lightsalmon;
+}
+h3:hover{
+    cursor: pointer;
+    font-size: larger;
+    color: lime;
+    border: dashed;
+}

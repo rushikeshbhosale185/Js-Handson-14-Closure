@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Closure</title>
+</head>
+<body>
+   <h1>JS Handson - 14 { Closure }</h1>
+   <pre><p>Q.1) 
+                                            function counter() {
+                                                var counter = 0;
+                                            
+                                                function IncreaseCounter() {
+                                                    return counter += 1;
+                                                };
+                                            
+                                                return IncreaseCounter;
+                                            }
+                                            
+                                            var counter = counter();
+                                            alert(counter());
+                                            alert(counter());
+                                            alert(counter());
+                                            alert(counter());
+   </p></pre>
+   <pre>Ans: <h3>
+    'It will shows an Alert Pop-up 4 times with contineously increase the count from 1 to 4'
+   </h3></pre><br><hr>
+
+   <pre><p>Q.2) 
+    
+                                            let count = 0;
+
+                                            (function () {
+                                                if (count === 0){
+                                                    let count = 1;
+                                                    console.log(count); // What is logged?
+                                                }
+                                                console.log(count); // What is logged?
+                                            })();
+   </p></pre>
+   <pre>Ans: <h3>
+    'It will logged the first output as 1 and then logged the second output in second line as 0'
+   </h3></pre><br><hr>
+
+   <pre><p>Q.3) 
+    
+                                            for (var i = 0; i < 3; i++) {
+                                                setTimeout(function log() {
+                                                    console.log(i); // What is logged?
+                                                }, 1000);
+                                            }
+   </p></pre>
+   <pre>Ans: <h3>
+    'It will logged total 3 times the output as a 3'
+   </h3></pre>
+
+   <pre><p>Q.4) Write a code to calculate area of a rectangle using inner function. In this case outer function 
+                should accept parameter length and inner function should accept parameter breadth.
+   </p></pre>
+   <pre>Ans: <h3>
+                                            function outer() {
+
+                                                let  length = 10;
+                                            
+                                                function inner() {
+                                                    let width = 2;
+                                                    let area = length * width;
+                                                    console.log(area);
+                                                }
+                                            
+                                                return inner;
+                                            }
+                                            let innerFunc = outer();
+                                            
+                                            innerFunc();
+   </h3></pre><br><hr>
+
+   <pre><p>Q.5) Take a variable in outer function and create an inner function to increase the counter every time it is called</p></pre>
+   <pre>Ans: <h3>
+                                            function counter() {
+                                                let count = 0;
+                                            
+                                                function IncreaseCounter() {
+                                                    return count += 1;
+                                            
+                                                };
+                                            
+                                                return IncreaseCounter;
+                                            }
+                                            
+                                            let result = counter();
+                                            
+                                            result();
+                                            result();
+                                            result();
+                                            result();
+                                            result();
+   </h3></pre><br><hr>
+
+   <pre><p>Q.6)         Print Output
+
+                        var a = 12;
+
+                        (function () {
+                        alert(a);
+                        })();
+   </p></pre>
+   <pre>Ans: <h3>
+    'It will Print Output in the form of alert Pop-up windows of value 12'
+   </h3></pre><br><hr>
+
+   <pre><p>Q.7) 
+                                            var a = 10;
+                                            var x = (function () {
+                                            var a = 12;
+                                            return function () {
+                                                alert(a);
+                                            };
+                                            })();
+                                            x();
+   </p></pre>
+   <pre>Ans: <h3>
+    'It will shows an alert Pop-up with the value 12'
+   </h3></pre><br><hr>
+
+   <pre><p>Q.8)
+                                        var globalVar = "xyz";
+
+                                        (function outerFunc(outerArg) {
+                                            var outerVar = 'a';
+                                            
+                                            (function innerFunc(innerArg) {
+                                                    var innerVar = 'b';
+                                                    
+                                                    console.log( "outerArg = " + outerArg + "\n" +  "innerArg = " + innerArg + "\n" + "outerVar = " + outerVar + "\n" + "innerVar = " + innerVar + "\n" + "globalVar = " + globalVar );
+                                            })(456);
+
+                                        })(123);
+   </p></pre>
+   <pre>Ans: <h3>
+    Here is the output - :
+                        outerArg = 123
+                        innerArg = 456
+                        outerVar = a
+                        innerVar = b
+                        globalVar = xyz
+   </h3></pre><br><hr>
+
+
+
+
+
+
+
+
+
+
+   <script src="index.js"></script> 
+</body>
+</html>
